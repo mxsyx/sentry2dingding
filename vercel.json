@@ -1,0 +1,23 @@
+{
+  "functions": {
+    "api/sentry2ding.js": {
+      "excludeFiles": "{,.}*"
+    }
+  },
+  "routes": [
+    {
+      "src": "/sentry2ding",
+      "dest": "/api/sentry2ding.js",
+      "methods": ["POST"]
+    }
+  ],
+  "headers": [
+    {
+      "source": "/sentry2ding",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "POST" }
+      ]
+    }
+  ]
+}
