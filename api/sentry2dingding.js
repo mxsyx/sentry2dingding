@@ -17,6 +17,7 @@ module.exports = async (req, res) => {
 
   // 2. 取 Sentry 发过来的 JSON
   const sentryBody = await json(req);
+  console.log(JSON.stringify(sentryBody));
 
   // 3. 拼钉钉 Markdown
   const md = `**【${sentryBody.level?.toUpperCase() || "ERROR"}】${sentryBody.project || ""}**  

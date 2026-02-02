@@ -1,18 +1,18 @@
 {
   "functions": {
-    "api/sentry2ding.js": {
+    "api/sentry2dingding.js": {
       "excludeFiles": "{,.}*"
     }
   },
   "rewrites": [
     {
-      "source": "/sentry2ding",
-      "destination": "/api/sentry2ding.js"
+      "source": "/sentry2dingding",
+      "destination": "/api/sentry2dingding.js"
     }
   ],
   "headers": [
     {
-      "source": "/sentry2ding",
+      "source": "/sentry2dingding",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "POST" }
