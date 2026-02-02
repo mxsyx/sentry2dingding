@@ -4,11 +4,10 @@
       "excludeFiles": "{,.}*"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/sentry2ding",
-      "dest": "/api/sentry2ding.js",
-      "methods": ["POST"]
+      "source": "/sentry2ding",
+      "destination": "/api/sentry2ding.js"
     }
   ],
   "headers": [
