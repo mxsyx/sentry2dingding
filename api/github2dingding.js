@@ -57,6 +57,10 @@ module.exports = async (req, res) => {
     const workflow = run.name || run.workflow?.name || "GitHub Actions";
     const branch = run.head_branch || "N/A";
     const sha = run.head_sha ? run.head_sha.slice(0, 7) : "N/A";
+    const commitUrl =
+      run.head_sha && body.repository?.html_url
+        ? `${body.repository.html_url}/commit/${run.head_sha}`
+        : "";
     const actor = run.actor?.login || run.triggering_actor?.login || "N/A";
     const runUrl = run.html_url || body.repository?.html_url || "";
     const duration = formatDuration(run.run_started_at, run.updated_at);
@@ -69,9 +73,8 @@ module.exports = async (req, res) => {
       `- **工作流**：${escapeMarkdown(workflow)}  `,
       `- **状态**：<font color="${color}">${status}</font>  `,
       `- **分支**：${escapeMarkdown(branch)}  `,
-      `- **提交**：${escapeMarkdown(sha)}  `,
+      `- **提交**：${commitUrl ? `[${escapeMarkdown(sha)}](${commitUrl})` : escapeMarkdown(sha)}  `,
       `- **触发者**：${escapeMarkdown(actor)}  `,
-      `- **运行次数**：${run.run_attempt || 1}  `,
     ];
 
     if (duration) {

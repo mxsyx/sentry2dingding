@@ -49,7 +49,6 @@ curl "https://sentry2dingding.vercel.app/github2dingding?access_token={YOUR_ACCE
       "conclusion": "success",
       "head_branch": "main",
       "head_sha": "0123456789abcdef",
-      "run_attempt": 1,
       "run_started_at": "2026-09-14T08:00:00Z",
       "updated_at": "2026-09-14T08:02:05Z",
       "html_url": "https://github.com/octo-org/example/actions/runs/123",
