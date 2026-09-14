@@ -2,17 +2,31 @@
   "functions": {
     "api/sentry2dingding.js": {
       "excludeFiles": "{,.}*"
+    },
+    "api/github2dingding.js": {
+      "excludeFiles": "{,.}*"
     }
   },
   "rewrites": [
     {
       "source": "/sentry2dingding",
       "destination": "/api/sentry2dingding.js"
+    },
+    {
+      "source": "/github2dingding",
+      "destination": "/api/github2dingding.js"
     }
   ],
   "headers": [
     {
       "source": "/sentry2dingding",
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "POST" }
+      ]
+    },
+    {
+      "source": "/github2dingding",
       "headers": [
         { "key": "Access-Control-Allow-Origin", "value": "*" },
         { "key": "Access-Control-Allow-Methods", "value": "POST" }
