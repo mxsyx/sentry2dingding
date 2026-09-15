@@ -9,8 +9,8 @@ module.exports = async (req, res) => {
 
   try {
     const query = req.query || {};
-    const accessToken = query.access_token || process.env.DINGTALK_ACCESS_TOKEN;
-    const secret = query.secret || process.env.DINGTALK_SECRET;
+    const accessToken = query.access_token;
+    const secret = query.secret;
     const githubSecret =
       query.github_secret || process.env.GITHUB_WEBHOOK_SECRET;
     const { at } = query;
@@ -28,7 +28,9 @@ module.exports = async (req, res) => {
         githubSecret,
       )
     ) {
-      return res.status(401).json({ code: -1, msg: "invalid GitHub signature" });
+      return res
+        .status(401)
+        .json({ code: -1, msg: "invalid GitHub signature" });
     }
 
     let body;

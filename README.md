@@ -17,8 +17,6 @@
 
 推荐在 Vercel 项目中配置以下环境变量：
 
-- `DINGTALK_ACCESS_TOKEN`：必填，钉钉自定义机器人的 access token
-- `DINGTALK_SECRET`：选填，钉钉机器人加签密钥
 - `GITHUB_WEBHOOK_SECRET`：推荐填写，GitHub Webhook 验签密钥
 
 也可以通过 URL 查询参数配置，适合一个部署连接多个钉钉群；未配置对应环境变量时再填写：
